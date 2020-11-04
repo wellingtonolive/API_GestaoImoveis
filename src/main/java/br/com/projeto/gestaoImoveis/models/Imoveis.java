@@ -1,10 +1,23 @@
 package br.com.projeto.gestaoImoveis.models;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Imoveis {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID;
+	@Enumerated(EnumType.STRING)
 	private TipoImovel tipoImovel;
 	private String descricao;
+	@OneToOne
 	private Endereco endereco;
 	
 	public Long getID() {

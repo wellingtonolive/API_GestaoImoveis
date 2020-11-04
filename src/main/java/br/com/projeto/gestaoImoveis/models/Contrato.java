@@ -2,17 +2,28 @@ package br.com.projeto.gestaoImoveis.models;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Contrato {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID;
 	private Integer numeroContrato;
 	private Date dtEmissao;
 	private Date dtValidade;
+	@OneToOne
 	private Imoveis imovel;
+	@OneToOne
 	private Pessoas proprietario;
-	private List<Pessoas> inquilino;
+	@OneToOne
+	private Pessoas inquilino;
 	private BigDecimal valorAluguel;
 	private BigDecimal valorDeposito;
 	
@@ -53,10 +64,10 @@ public class Contrato {
 	public void setProprietario(Pessoas proprietario) {
 		this.proprietario = proprietario;
 	}
-	public List<Pessoas> getInquilino() {
+	public Pessoas getInquilino() {
 		return inquilino;
 	}
-	public void setInquilino(List<Pessoas> inquilino) {
+	public void setInquilino(Pessoas inquilino) {
 		this.inquilino = inquilino;
 	}
 	public BigDecimal getValorAluguel() {
