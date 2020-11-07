@@ -7,35 +7,52 @@ import javax.persistence.Id;
 
 @Entity
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID;
 	private String nm_usuario;
 	private String senha;
 	private String email;
-	
+
+	public Usuario() {
+
+	}
+
+	public Usuario(String nm_usuario, String senha, String email) {
+		this.nm_usuario = nm_usuario;
+		this.senha = senha;
+		this.email = email;
+	}
+
 	public Long getID() {
 		return ID;
 	}
+
 	public void setID(Long iD) {
 		ID = iD;
 	}
+
 	public String getNm_usuario() {
 		return nm_usuario;
 	}
+
 	public void setNm_usuario(String nm_usuario) {
 		this.nm_usuario = nm_usuario;
 	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
