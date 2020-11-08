@@ -11,7 +11,7 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID;
-	private String nm_usuario;
+	private String nmUsuario;
 	private String senha;
 	private String email;
 
@@ -19,8 +19,8 @@ public class Usuario {
 
 	}
 
-	public Usuario(String nm_usuario, String senha, String email) {
-		this.nm_usuario = nm_usuario;
+	public Usuario(String nmUsuario, String senha, String email) {
+		this.nmUsuario = nmUsuario;
 		this.senha = senha;
 		this.email = email;
 	}
@@ -33,12 +33,12 @@ public class Usuario {
 		ID = iD;
 	}
 
-	public String getNm_usuario() {
-		return nm_usuario;
+	public String getNmusuario() {
+		return nmUsuario;
 	}
 
-	public void setNm_usuario(String nm_usuario) {
-		this.nm_usuario = nm_usuario;
+	public void setNmusuario(String nmUsuario) {
+		this.nmUsuario = nmUsuario;
 	}
 
 	public String getSenha() {

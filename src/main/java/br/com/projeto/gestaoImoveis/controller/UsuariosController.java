@@ -3,6 +3,7 @@ package br.com.projeto.gestaoImoveis.controller;
 import java.net.URI;
 import java.util.List;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,12 +36,18 @@ public class UsuariosController {
 	}
 
 	@PostMapping
-	public ResponseEntity<UsuarioDto> cadastrar(@RequestBody @Valid UsuarioForm usuarioForm,
+	@Transactional
+	public ResponseEntity<?> cadastrar(@RequestBody @Valid UsuarioForm usuarioForm,
 			UriComponentsBuilder uriBUBuilder) {
+		
+		if(usuarioForm.validaUserEmail(usuarioRepository)) {
+			return ResponseEntity.badRequest().body("Usuário e/ou E-mail já cadastrado no Sistema.");
+		}
+		
 		Usuario usuario = usuarioForm.converter();
 		usuarioRepository.save(usuario);
 
-		URI uri = uriBUBuilder.path("/topicos/{id}").buildAndExpand(usuario.getID()).toUri();
+		URI uri = uriBUBuilder.path("/usuario/{id}").buildAndExpand(usuario.getID()).toUri();
 		return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
 	}
 
