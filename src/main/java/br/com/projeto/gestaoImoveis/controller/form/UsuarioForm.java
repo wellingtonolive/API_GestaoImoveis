@@ -26,7 +26,7 @@ public class UsuarioForm {
 	@NotNull(message = "Senha não pode ser nula")
 	@NotEmpty(message = "Senha não poder ser vazia")
 	@Size(min = 8, message = "Senha deve conter no mínimo 8 dígitos")
-	private String nm_senha;
+	private String nmSenha;
 
 	public String getEmail() {
 		return email;
@@ -45,17 +45,17 @@ public class UsuarioForm {
 	}
 
 	public String getNm_senha() {
-		return nm_senha;
+		return nmSenha;
 	}
 
-	public void setNm_senha(String nm_senha) {
-		this.nm_senha = nm_senha;
+	public void setNm_senha(String nmSenha) {
+		this.nmSenha = nmSenha;
 	}
 
 	public Usuario converter() {
 		
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); 
-		String encodedPassword = passwordEncoder.encode(nm_senha);
+		String encodedPassword = passwordEncoder.encode(nmSenha);
 		System.out.print(encodedPassword);
 
 		return new Usuario(nmUsuario, encodedPassword, email);
