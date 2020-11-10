@@ -8,13 +8,13 @@ import br.com.projeto.gestaoImoveis.models.Usuario;
 public class UsuarioDto {
 	
 	private Long id;
-	private String nm_usuario;
+	private String nmUsuario;
 	private String email;
 	
 	
 	public UsuarioDto(Usuario usuario) {
 		this.id = usuario.getID();
-		this.nm_usuario = usuario.getNm_usuario();
+		this.nmUsuario = usuario.getNmusuario();
 		this.email = usuario.getEmail();
 		
 	}
@@ -23,7 +23,7 @@ public class UsuarioDto {
 		return id;
 	}
 	public String getNm_usuario() {
-		return nm_usuario;
+		return nmUsuario;
 	}
 	public String getEmail() {
 		return email;

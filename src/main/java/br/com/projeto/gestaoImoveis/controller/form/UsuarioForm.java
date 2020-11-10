@@ -76,7 +76,8 @@ public class UsuarioForm {
 
 	public String apresentacao() {
 		return "Olá \n Cadastro de Usuário Realizado com Sucesso \n" + "\nSegue Abaixo os Dados de Acesso.\n"
-				+ "E-mail: " + this.email + "Usuário: " + this.nmUsuario
+				+ "E-mail: " + this.email + " \n"  
+				+ "Usuário: " + this.nmUsuario + "\n"
 				+ "Guarde bem essas informações, serão usadadas para Acessar nossa Plataforma.\n"
 				+ "\nNo seu Primeiro Acesso, não esqueça de Completar o seu perfil, com suas informações pessoais\n";
 

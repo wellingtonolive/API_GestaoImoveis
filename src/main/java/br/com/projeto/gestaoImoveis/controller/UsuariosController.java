@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.projeto.gestaoImoveis.config.email.EmailService;
 import br.com.projeto.gestaoImoveis.controller.dto.UsuarioDto;
 import br.com.projeto.gestaoImoveis.controller.form.UsuarioForm;
 import br.com.projeto.gestaoImoveis.models.Usuario;
@@ -26,6 +27,9 @@ public class UsuariosController {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	
+	@Autowired
+	private EmailService emailService;
 
 	@GetMapping
 	public List<UsuarioDto> lista() {
@@ -46,8 +50,8 @@ public class UsuariosController {
 		
 		Usuario usuario = usuarioForm.converter();
 		usuarioRepository.save(usuario);
-
 		URI uri = uriBUBuilder.path("/usuario/{id}").buildAndExpand(usuario.getID()).toUri();
+		emailService.sendMail(usuarioForm.getEmail(), "Cadastro Realizado com Sucesso", usuarioForm.apresentacao());
 		return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
 	}
 
