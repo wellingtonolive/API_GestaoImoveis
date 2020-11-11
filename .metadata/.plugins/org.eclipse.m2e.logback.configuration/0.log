@@ -1,0 +1,30 @@
+2020-11-10 16:14:14,968 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-10 16:15:16,067 [Worker-1: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.com.projeto:gestaoImoveis:0.0.1-SNAPSHOT @ F:\git\API_GestaoImoveis\GestaoImoveis\pom.xml.
+2020-11-10 16:15:18,355 [Worker-1: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestaoImoveis/src/main/java
+2020-11-10 16:15:18,361 [Worker-1: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestaoImoveis/src/test/java
+2020-11-10 16:15:19,081 [Worker-1: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 5 sec
+2020-11-10 16:15:20,504 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-10 16:15:20,504 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\main\resources
+2020-11-10 16:15:20,504 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\main\resources
+2020-11-10 16:15:20,506 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-10 16:15:20,506 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\test\resources
+2020-11-10 16:15:51,978 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-10 16:15:51,978 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\main\resources
+2020-11-10 16:15:51,978 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\main\resources
+2020-11-10 16:15:51,979 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-10 16:15:51,979 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\test\resources
+2020-11-10 16:17:54,737 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-10 16:17:54,737 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\main\resources
+2020-11-10 16:17:54,737 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\main\resources
+2020-11-10 16:17:54,738 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-10 16:17:54,738 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\test\resources
+2020-11-10 16:18:13,391 [Worker-17: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-11-10 16:18:13,749 [Worker-17: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.com.projeto:gestaoImoveis:0.0.1-SNAPSHOT @ F:\git\API_GestaoImoveis\GestaoImoveis\pom.xml.
+2020-11-10 16:18:14,161 [Worker-17: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestaoImoveis/src/main/java
+2020-11-10 16:18:14,161 [Worker-17: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestaoImoveis/src/test/java
+2020-11-10 16:18:14,357 [Worker-17: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2020-11-10 16:18:14,827 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-10 16:18:14,827 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\main\resources
+2020-11-10 16:18:14,827 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\main\resources
+2020-11-10 16:18:14,829 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-10 16:18:14,829 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\git\API_GestaoImoveis\GestaoImoveis\src\test\resources
