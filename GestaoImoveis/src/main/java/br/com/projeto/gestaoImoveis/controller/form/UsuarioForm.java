@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import br.com.projeto.gestaoImoveis.models.Usuario;
 import br.com.projeto.gestaoImoveis.respository.UsuarioRepository;
@@ -54,11 +53,7 @@ public class UsuarioForm {
 
 	public Usuario converter() {
 		
-		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); 
-		String encodedPassword = passwordEncoder.encode(nmSenha);
-		System.out.print(encodedPassword);
-
-		return new Usuario(nmUsuario, encodedPassword, email);
+		return new Usuario(nmUsuario, new BCryptPasswordEncoder().encode(nmSenha), email);
 	}
 
 	public boolean validaUserEmail(UsuarioRepository usuarioRepository) {
