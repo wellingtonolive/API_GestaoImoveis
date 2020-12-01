@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import br.com.projeto.gestaoImoveis.config.Utils;
 import br.com.projeto.gestaoImoveis.models.Endereco;
+import br.com.projeto.gestaoImoveis.models.Genero;
 import br.com.projeto.gestaoImoveis.models.Pessoas;
 
 public class DetalhePessoaDTO {
@@ -16,7 +17,7 @@ public class DetalhePessoaDTO {
 	private String sobrenome;
 	private String cpf;
 	private String dtNascimento;
-	private String genero;
+	private Genero genero;
 	private String numTelefoneFixo;
 	private String numCelular;
 	private String perfilUsuario;
@@ -46,7 +47,7 @@ public class DetalhePessoaDTO {
 		return dtNascimento;
 	}
 
-	public String getGenero() {
+	public Genero getGenero() {
 		return genero;
 	}
 
@@ -67,7 +68,7 @@ public class DetalhePessoaDTO {
 	}
 
 	public DetalhePessoaDTO(Long iD, String user, String nome, String sobrenome, String cpf, String dtNascimento,
-			String genero, String numTelefoneFixo, String numCelular, String perfilUsuario,
+			Genero genero, String numTelefoneFixo, String numCelular, String perfilUsuario,
 			List<EnderecoDto> listaEndereco) {
 		ID = iD;
 		this.user = user;
@@ -89,7 +90,7 @@ public class DetalhePessoaDTO {
 		this.sobrenome = pessoas.getSobrenome();
 		this.cpf = pessoas.getCpf();
 		this.dtNascimento = Utils.converterDateEmStringFormatado(pessoas.getDtNascimento());
-		// this.genero = pessoas.getGenero();
+		this.genero = pessoas.getGenero();
 		this.numTelefoneFixo = pessoas.getNumTelefoneFixo();
 		this.numCelular = pessoas.getNumCelular();
 
@@ -103,7 +104,7 @@ public class DetalhePessoaDTO {
 		this.sobrenome = pessoa.get().getSobrenome();
 		this.cpf = pessoa.get().getCpf();
 		this.dtNascimento = Utils.converterDateEmStringFormatado(pessoa.get().getDtNascimento());
-		// this.genero = pessoas.getGenero();
+		this.genero = pessoa.get().getGenero();
 		this.numTelefoneFixo = pessoa.get().getNumTelefoneFixo();
 		this.numCelular = pessoa.get().getNumCelular();
 		listaEndereco.stream().forEach(endereco -> this.endereco.add(new EnderecoDto(endereco)));

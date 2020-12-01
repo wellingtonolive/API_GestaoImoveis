@@ -16,27 +16,28 @@ import br.com.projeto.gestaoImoveis.respository.UsuarioRepository;
 
 public class PessoaForm {
 
-	@NotNull(message = "Usuário é um valor obrigatório")
+	@NotNull(message = "Não pode ser nulo")
 	private String NmUsuario;
-	@NotNull
-	@NotEmpty
+	@NotNull(message = "Não pode ser nulo")
+	@NotEmpty(message = "Não pode ser vazio")
 	private String nome;
-	@NotNull
-	@NotEmpty
+	@NotNull(message = "Não pode ser nulo")
+	@NotEmpty(message = "Sobrenome não pode ser em branco")
 	private String sobrenome;
-	@NotNull
-	@NotEmpty
+	@NotNull(message = "Não pode ser nulo")
+	@NotEmpty(message = "Não pode ser vazio")
 	private String cpf;
-	@NotEmpty
-	@NotNull
+	@NotEmpty(message = "Não pode ser vazio")
+	@NotNull(message = "Não pode ser nulo")
 	private String dtNascimento;
-	@NotNull
+	@NotNull(message = "Não pode ser nulo")
 	private Genero genero;
-	@NotEmpty
-	@NotNull
+	@NotEmpty(message = "Não pode ser vazio")
+	@NotNull(message = "Não pode ser nulo")
 	private String numTelefoneFixo;
-	@NotEmpty
-	@NotNull
+	@NotEmpty(message = "Não pode ser vazio")
+	@NotNull(message = "Não pode ser nulo")
+	
 	private String numCelular;
 
 	public String getNmUsuario() {
