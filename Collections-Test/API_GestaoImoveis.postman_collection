@@ -49,6 +49,16 @@
 				{
 					"name": "CadastrarUsuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjMwMDA0IiwiaWF0IjoxNjA1NjYzNDc0LCJleHAiOjE2MDU3NDk4NzR9.lt3HKUSkqC6ynqLc4vsrgGpW9x-bAQk4n4jAr81R9Fk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -59,7 +69,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"wellington@gmail.com\",\r\n    \"nm_usuario\":\"wcarvalho\",\r\n    \"nm_senha\":\"teste123\"\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"email\":\"wellingtoncarvalho11@gmail.com\",\r\n    \"nm_usuario\":\"wcarvalho1234\",\r\n    \"nm_senha\":\"123456789\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -86,18 +96,6 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
-						},
-						"description": "Trazer os Dados de Apenas um Usuário        "
-					},
-					"response": []
-				},
-				{
-					"name": "Atualizar Senha Usuário",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": {
 							"raw": "http://localhost:8080/usuario/10015",
 							"protocol": "http",
 							"host": [
@@ -107,6 +105,52 @@
 							"path": [
 								"usuario",
 								"10015"
+							]
+						},
+						"description": "Trazer os Dados de Apenas um Usuário        "
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Senha Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjMwMDA0IiwiaWF0IjoxNjA1NjYzNDc0LCJleHAiOjE2MDU3NDk4NzR9.lt3HKUSkqC6ynqLc4vsrgGpW9x-bAQk4n4jAr81R9Fk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nmSenha\": \"TestandoSenhaNova\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuario/30004",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"30004"
 							]
 						}
 					},
@@ -137,8 +181,195 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Autenticação - TOKEN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"wellingtoncarvalho11@gmail.com\",\r\n    \"senha\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"token"
+							]
+						},
+						"description": "Realizando autenticação via Token"
+					},
+					"response": []
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Monitoramento",
+			"item": [
+				{
+					"name": "Actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health"
+							]
+						},
+						"description": "Monitoramento de API    "
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pessoas",
+			"item": [
+				{
+					"name": "Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA2Nzc1MzM0LCJleHAiOjE2MDY4NjE3MzR9.tzTUR_shtq8myK3mEGtYzvd9322oKAcG8qgVb0X_aws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cpf\": \"123465798\",\r\n  \"dtNascimento\": \"11/03/1999\",\r\n  \"genero\": \"MASCULINO\",\r\n  \"nmUsuario\": \"wcarvalho1234\",\r\n  \"nome\": \"Wellington\",\r\n  \"numCelular\": \"11977186928\",\r\n  \"numTelefoneFixo\": \"27272968\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa"
+							]
+						},
+						"description": "Cadastrando Pessoas"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Pessoas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA2Nzc1MzM0LCJleHAiOjE2MDY4NjE3MzR9.tzTUR_shtq8myK3mEGtYzvd9322oKAcG8qgVb0X_aws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhar Pessoa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA2Nzc1MzM0LCJleHAiOjE2MDY4NjE3MzR9.tzTUR_shtq8myK3mEGtYzvd9322oKAcG8qgVb0X_aws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoa/10006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"10006"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD de Pessoas",
 			"protocolProfileBehavior": {}
 		}
 	],
