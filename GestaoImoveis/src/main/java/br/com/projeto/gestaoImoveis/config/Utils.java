@@ -1,30 +1,31 @@
 package br.com.projeto.gestaoImoveis.config;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Utils {
 
-
-	public static void main(String[] args) {
-
+	
+	
+	
+	public static String converterDateEmStringFormatado(Date date){
+		SimpleDateFormat formata  = new SimpleDateFormat("dd/MM/yyyy");
+	
+		return formata.format(date);
 		
-		String email = null;
-		
-		email = "desenvolvimentosoftwares11@gmail.com";
-		String code = gerandoHash(email);
-		System.out.println(code);
-		
-		System.out.println(quebrandoHash(code));
-
-	}
-
-	private static String quebrandoHash(String code) {
-		return new String(java.util.Base64.getDecoder().decode(code));
 	}
 	
-
-	private static String gerandoHash(String email) {
-		return new String(java.util.Base64.getEncoder().encode(email.getBytes()));
-
+	
+	public static void main(String[] args) throws ParseException {
+		
+		SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
+		Date dataNascimento = formataData.parse("11/03/2020");
+		String dataString = formataData.format(dataNascimento);
+		System.out.println("Data em String:" + dataString);
+		System.out.println(formataData.format(dataNascimento));
+		
+		
 	}
 
 }
