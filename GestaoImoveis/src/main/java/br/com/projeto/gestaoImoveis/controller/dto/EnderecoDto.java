@@ -4,13 +4,19 @@ import br.com.projeto.gestaoImoveis.models.Endereco;
 
 public class EnderecoDto {
 
+	
+	private Long id;
 	private String logradouro;
 	private String numero;
 	private String complemento;
 	private String cep;
 	private String cidade;
 	private String estado;
-
+	
+	public Long getId() {
+		return id;
+	}
+	
 	public String getLogradouro() {
 		return logradouro;
 	}
