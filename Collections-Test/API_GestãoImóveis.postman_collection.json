@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "845d5a5f-f057-4df0-be36-160b0522f713",
+		"name": "API_GestãoImóveis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "buscaUsuários",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CadastrarUsuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjMwMDA0IiwiaWF0IjoxNjA1NjYzNDc0LCJleHAiOjE2MDU3NDk4NzR9.lt3HKUSkqC6ynqLc4vsrgGpW9x-bAQk4n4jAr81R9Fk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"wellingtoncarvalho11@gmail.com\",\r\n    \"nm_usuario\":\"wcarvalho1234\",\r\n    \"nm_senha\":\"123456789\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhar Usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuario/10015",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"10015"
+							]
+						},
+						"description": "Trazer os Dados de Apenas um Usuário        "
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Senha Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjMwMDA0IiwiaWF0IjoxNjA1NjYzNDc0LCJleHAiOjE2MDU3NDk4NzR9.lt3HKUSkqC6ynqLc4vsrgGpW9x-bAQk4n4jAr81R9Fk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nmSenha\": \"TestandoSenhaNova\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuario/30004",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"30004"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagando Usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/usuario/10015",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"10015"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autenticação - TOKEN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"wellingtoncarvalho11@gmail.com\",\r\n    \"senha\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"token"
+							]
+						},
+						"description": "Realizando autenticação via Token"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Monitoramento",
+			"item": [
+				{
+					"name": "Actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health"
+							]
+						},
+						"description": "Monitoramento de API    "
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pessoas",
+			"item": [
+				{
+					"name": "Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA3MDA1MTQ3LCJleHAiOjE2MDcwOTE1NDd9.3OCvyvDWtjfHzZF2km0QSt2buDbRTc7iAlwvuhKSLmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cpf\": \"123465798\",\r\n  \"dtNascimento\": \"11/03/1999\",\r\n  \"genero\": \"MASCULINO\",\r\n  \"nmUsuario\": \"wcarvalho1234\",\r\n  \"nome\": \"Wellington\",\r\n  \"sobrenome\":\"Oliveira Carvalho\",\r\n  \"numCelular\": \"11977186928\",\r\n  \"numTelefoneFixo\": \"27272968\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa"
+							]
+						},
+						"description": "Cadastrando Pessoas"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Pessoas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA2ODYxNjk4LCJleHAiOjE2MDY5NDgwOTh9.5GoRrzphqt_A9XT8tftmaOoa2NWteUZlHZszMGtoK2A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhar Pessoa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA3MDA1MTQ3LCJleHAiOjE2MDcwOTE1NDd9.3OCvyvDWtjfHzZF2km0QSt2buDbRTc7iAlwvuhKSLmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoa/10007",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"10007"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA2ODYxNjk4LCJleHAiOjE2MDY5NDgwOTh9.5GoRrzphqt_A9XT8tftmaOoa2NWteUZlHZszMGtoK2A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cpf\": \"12346578\",\r\n  \"genero\": \"FEMININO\",\r\n  \"nome\": \"Wellington\",\r\n  \"numCelular\": \"(11)977186928\",\r\n  \"numTelefoneFixo\": \"4402-3696\",\r\n  \"sobrenome\": \"de Oliveira Carvalho\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pessoa/10006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"10006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA2ODYxNjk4LCJleHAiOjE2MDY5NDgwOTh9.5GoRrzphqt_A9XT8tftmaOoa2NWteUZlHZszMGtoK2A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoa/10006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"10006"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD de Pessoas",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Endereço",
+			"item": [
+				{
+					"name": "Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA3MDA1MTQ3LCJleHAiOjE2MDcwOTE1NDd9.3OCvyvDWtjfHzZF2km0QSt2buDbRTc7iAlwvuhKSLmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cep\": \"0894578\",\r\n  \"cidade\": \"BAHIA\",\r\n  \"complemento\": \"LOJA\",\r\n  \"estado\": \"SP\",\r\n  \"idPessoa\": 10007,\r\n  \"logradouro\": \"RUA SEM SAIDA\",\r\n  \"numero\": \"29\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA3MDA1MTQ3LCJleHAiOjE2MDcwOTE1NDd9.3OCvyvDWtjfHzZF2km0QSt2buDbRTc7iAlwvuhKSLmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cep\": \"03945060\",\r\n  \"cidade\": \"Teste\",\r\n  \"complemento\": \"Casa\",\r\n  \"estado\": \"Bahia\",\r\n  \"idEndereco\": 1,\r\n  \"idPessoa\": 10007,\r\n  \"logradouro\": \"Teste logradouro\",\r\n  \"numero\": \"29\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/endereco/10007",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"endereco",
+								"10007"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgR2VzdMOjbyBJbcOzdmVpcyIsInN1YiI6IjYwMDA1IiwiaWF0IjoxNjA3MDA1MTQ3LCJleHAiOjE2MDcwOTE1NDd9.3OCvyvDWtjfHzZF2km0QSt2buDbRTc7iAlwvuhKSLmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/endereco/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"endereco",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
