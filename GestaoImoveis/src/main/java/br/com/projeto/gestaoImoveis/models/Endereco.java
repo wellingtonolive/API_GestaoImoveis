@@ -85,4 +85,38 @@ public class Endereco {
 		this.estado = estado;
 	}
 
+	
+	public Endereco() {
+		
+	}
+	
+	public Endereco(Long iD, Pessoas pessoa, String logradouro, String numero, String complemento, String cep,
+			String cidade, String estado) {
+		ID = iD;
+		this.pessoa = pessoa;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.cep = cep;
+		this.cidade = cidade;
+		this.estado = estado;
+	}
+
+	public Endereco(Pessoas pessoa, String logradouro, String numero, String complemento, String cep, String cidade,
+			String estado) {
+		this.pessoa = pessoa;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.cep = cep;
+		this.cidade = cidade;
+		this.estado = estado;
+	}
+	
+	
+	
+
+	
+	
+	
 }

@@ -37,7 +37,6 @@ public class PessoaForm {
 	private String numTelefoneFixo;
 	@NotEmpty(message = "Não pode ser vazio")
 	@NotNull(message = "Não pode ser nulo")
-	
 	private String numCelular;
 
 	public String getNmUsuario() {
@@ -54,6 +53,14 @@ public class PessoaForm {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
 	}
 
 	public String getCpf() {
@@ -108,13 +115,11 @@ public class PessoaForm {
 
 		SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataNascimento = formataData.parse(this.dtNascimento);
-		
-		Optional<Usuario> usuario = usuarioRepository.findByNmUsuario(NmUsuario);
-		
-		
-		return new Pessoas(usuario.get(), this.nome, this.sobrenome,this.cpf, dataNascimento, this.genero, this.numTelefoneFixo,
-				this.numCelular);
-	}
 
+		Optional<Usuario> usuario = usuarioRepository.findByNmUsuario(NmUsuario);
+
+		return new Pessoas(usuario.get(), this.nome, this.sobrenome, this.cpf, dataNascimento, this.genero,
+				this.numTelefoneFixo, this.numCelular);
+	}
 
 }
