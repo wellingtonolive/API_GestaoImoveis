@@ -125,11 +125,12 @@ public class Pessoas {
 	}
 
 	
+	
 	public Pessoas() {
 		
 	}
 	
-	public Pessoas(Usuario user, String nome, String sobrenome,String cpf, Date dtNascimento, Genero genero, String numTelefoneFixo,
+	public Pessoas(Usuario user, String nome, String sobrenome,String cpf, Date dtNascimento, Genero genero, PerfilUsuario perfilUsuario, String numTelefoneFixo,
 			String numCelular) {
 		this.user = user;
 		this.nome = nome;
@@ -137,6 +138,7 @@ public class Pessoas {
 		this.cpf = cpf;
 		this.dtNascimento = dtNascimento;
 		this.genero = genero;
+		this.perfilUsuario = perfilUsuario;
 		this.numTelefoneFixo = numTelefoneFixo;
 		this.numCelular = numCelular;
 

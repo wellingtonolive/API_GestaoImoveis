@@ -9,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import br.com.projeto.gestaoImoveis.models.Genero;
+import br.com.projeto.gestaoImoveis.models.PerfilUsuario;
 import br.com.projeto.gestaoImoveis.models.Pessoas;
 import br.com.projeto.gestaoImoveis.models.Usuario;
 import br.com.projeto.gestaoImoveis.respository.PessoaRepository;
@@ -32,6 +33,8 @@ public class PessoaForm {
 	private String dtNascimento;
 	@NotNull(message = "Não pode ser nulo")
 	private Genero genero;
+	@NotNull(message = "Não pode ser nulo")
+	private PerfilUsuario perfilUsuario;
 	@NotEmpty(message = "Não pode ser vazio")
 	@NotNull(message = "Não pode ser nulo")
 	private String numTelefoneFixo;
@@ -103,6 +106,14 @@ public class PessoaForm {
 		this.numCelular = numCelular;
 	}
 
+	public PerfilUsuario getPerfilUsuario() {
+		return perfilUsuario;
+	}
+
+	public void setPerfilUsuario(PerfilUsuario perfilUsuario) {
+		this.perfilUsuario = perfilUsuario;
+	}
+
 	public boolean validaPessoaPorCPF(PessoaRepository pessoaRepository) {
 		Optional<Pessoas> pessoaPorCPF = pessoaRepository.findByCpf(cpf);
 		if (pessoaPorCPF.isPresent()) {
@@ -119,7 +130,7 @@ public class PessoaForm {
 		Optional<Usuario> usuario = usuarioRepository.findByNmUsuario(NmUsuario);
 
 		return new Pessoas(usuario.get(), this.nome, this.sobrenome, this.cpf, dataNascimento, this.genero,
-				this.numTelefoneFixo, this.numCelular);
+				this.perfilUsuario, this.numTelefoneFixo, this.numCelular);
 	}
 
 }

@@ -7,6 +7,7 @@ import java.util.Optional;
 import br.com.projeto.gestaoImoveis.config.Utils;
 import br.com.projeto.gestaoImoveis.models.Endereco;
 import br.com.projeto.gestaoImoveis.models.Genero;
+import br.com.projeto.gestaoImoveis.models.PerfilUsuario;
 import br.com.projeto.gestaoImoveis.models.Pessoas;
 
 public class DetalhePessoaDTO {
@@ -20,7 +21,7 @@ public class DetalhePessoaDTO {
 	private Genero genero;
 	private String numTelefoneFixo;
 	private String numCelular;
-	private String perfilUsuario;
+	private PerfilUsuario perfilUsuario;
 	private List<EnderecoDto> endereco = new ArrayList<EnderecoDto>();
 
 	public Long getID() {
@@ -59,7 +60,7 @@ public class DetalhePessoaDTO {
 		return numCelular;
 	}
 
-	public String getPerfilUsuario() {
+	public PerfilUsuario getPerfilUsuario() {
 		return perfilUsuario;
 	}
 
@@ -68,8 +69,7 @@ public class DetalhePessoaDTO {
 	}
 
 	public DetalhePessoaDTO(Long iD, String user, String nome, String sobrenome, String cpf, String dtNascimento,
-			Genero genero, String numTelefoneFixo, String numCelular, String perfilUsuario,
-			List<EnderecoDto> listaEndereco) {
+			Genero genero, PerfilUsuario perfilUsuario,String numTelefoneFixo, String numCelular, List<EnderecoDto> listaEndereco) {
 		ID = iD;
 		this.user = user;
 		this.nome = nome;
@@ -77,6 +77,7 @@ public class DetalhePessoaDTO {
 		this.cpf = cpf;
 		this.dtNascimento = dtNascimento;
 		this.genero = genero;
+		this.perfilUsuario = perfilUsuario;
 		this.numTelefoneFixo = numTelefoneFixo;
 		this.numCelular = numCelular;
 		this.perfilUsuario = perfilUsuario;
@@ -91,6 +92,7 @@ public class DetalhePessoaDTO {
 		this.cpf = pessoas.getCpf();
 		this.dtNascimento = Utils.converterDateEmStringFormatado(pessoas.getDtNascimento());
 		this.genero = pessoas.getGenero();
+		this.perfilUsuario = pessoas.getPerfilUsuario();
 		this.numTelefoneFixo = pessoas.getNumTelefoneFixo();
 		this.numCelular = pessoas.getNumCelular();
 
@@ -105,6 +107,7 @@ public class DetalhePessoaDTO {
 		this.cpf = pessoa.get().getCpf();
 		this.dtNascimento = Utils.converterDateEmStringFormatado(pessoa.get().getDtNascimento());
 		this.genero = pessoa.get().getGenero();
+		this.perfilUsuario = pessoa.get().getPerfilUsuario();
 		this.numTelefoneFixo = pessoa.get().getNumTelefoneFixo();
 		this.numCelular = pessoa.get().getNumCelular();
 		listaEndereco.stream().forEach(endereco -> this.endereco.add(new EnderecoDto(endereco)));
