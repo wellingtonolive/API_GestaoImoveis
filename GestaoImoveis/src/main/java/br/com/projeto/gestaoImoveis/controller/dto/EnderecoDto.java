@@ -42,7 +42,7 @@ public class EnderecoDto {
 	}
 
 	public EnderecoDto(Endereco endereco) {
-		
+		this.id = endereco.getID();
 		this.logradouro = endereco.getLogradouro();
 		this.numero = endereco.getNumero();
 		this.complemento = endereco.getComplemento();
