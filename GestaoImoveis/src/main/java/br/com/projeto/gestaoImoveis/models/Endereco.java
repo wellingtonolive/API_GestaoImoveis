@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Endereco {
@@ -14,6 +15,8 @@ public class Endereco {
 	private Long ID;
 	@ManyToOne
 	private Pessoas pessoa;
+	@OneToOne
+	private Imoveis imovel;
 	private String logradouro;
 	private String numero;
 	private String complemento;
@@ -85,11 +88,10 @@ public class Endereco {
 		this.estado = estado;
 	}
 
-	
 	public Endereco() {
-		
+
 	}
-	
+
 	public Endereco(Long iD, Pessoas pessoa, String logradouro, String numero, String complemento, String cep,
 			String cidade, String estado) {
 		ID = iD;
@@ -112,11 +114,28 @@ public class Endereco {
 		this.cidade = cidade;
 		this.estado = estado;
 	}
+
+	public Endereco(String logradouro, String numero, String complemento, String cep, String cidade, String estado) {
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.cep = cep;
+		this.cidade = cidade;
+		this.estado = estado;
+	}
+
+	public Endereco(Imoveis imovel, String logradouro, String numero, String complemento, String cep, String cidade,
+			String estado) {
+		this.imovel = imovel;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.cep = cep;
+		this.cidade = cidade;
+		this.estado = estado;
+	}
 	
 	
 	
 
-	
-	
-	
 }
