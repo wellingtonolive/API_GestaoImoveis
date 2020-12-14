@@ -1,6 +1,7 @@
 package br.com.projeto.gestaoImoveis.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -8,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -35,6 +37,8 @@ public class Pessoas {
 	private PerfilUsuario perfilUsuario;
 	@OneToOne
 	private Endereco endereco;
+	@OneToMany
+	private List<Imoveis> imoveis;
 
 	public Long getID() {
 		return ID;
@@ -125,13 +129,21 @@ public class Pessoas {
 	}
 
 	
-	
-	public Pessoas() {
-		
+
+	public List<Imoveis> getImoveis() {
+		return imoveis;
 	}
-	
-	public Pessoas(Usuario user, String nome, String sobrenome,String cpf, Date dtNascimento, Genero genero, PerfilUsuario perfilUsuario, String numTelefoneFixo,
-			String numCelular) {
+
+	public void setImoveis(List<Imoveis> imoveis) {
+		this.imoveis = imoveis;
+	}
+
+	public Pessoas() {
+
+	}
+
+	public Pessoas(Usuario user, String nome, String sobrenome, String cpf, Date dtNascimento, Genero genero,
+			PerfilUsuario perfilUsuario, String numTelefoneFixo, String numCelular) {
 		this.user = user;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
