@@ -12,5 +12,7 @@ public class GestaoImoveisApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GestaoImoveisApplication.class, args);
 	}
+	
+	
 
 }
